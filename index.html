@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("static/header.png");
+  min-height: 80%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#menu" class="w3-button w3-block w3-black">GRAPH</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">WHAT</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">G Leaden HIST-292L-111</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-tag" style="font-size:60px">  &emsp;  origins of  &emsp;  <br>  &emsp;  The Circle  &emsp;  </span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+   <a href="https://www.maristcircle.com"> <span style=background-color:#737373>Marist Circle</span></a>
+
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE DH PROJECT</span></h5>
+    <p>The <a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n1.htm> first archived instance</a> of the <a href=https://www.maristcircle.com>Marist Circle</a> dates back to February 12, 1965.</p>
+    <p>This DH project seeks to recognize and denote sentiment patterns between weekly/monthly and yearly editions of the first 3 years of the archived Marist Circle.</p>
+<h6 class="w3-center"><span class="w3-tag w3-wide">UNDERSTANDING SENTIMENT ANALYSIS</span></h6> 
+<p>lorem ipsum</p>
+</div>
+
+<!-- GRAPH Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE GRAPH</span></h5>
+
+      <div id=chart>
+            <center><div class="slidecontainer">
+                <input type="range" min="0.420690980911675" max="0.462943968940346" value="0.420690980911675" step="0.000000000000001" class="slider" id="myRange">
+                Subjectivity Threshold: <span id="slideval"></span>
+            </div></center>
+        <canvas id="chartContainer" width="550" height="550"></canvas>
+      </div>
+    test
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHAT CAN WE LEARN FROM THIS?</span></h5>
+    <p>vietnam war, 1967 FDR, lorem ipsum.</p>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>, ChartJS, Python, TextBlob, and GitHub Pages</p>
+</footer>
+
+<!-- <script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var x;
+  x = document.getElementByClassName("graph");
+  
+}
+document.getElementById("myLink").click();
+</script> -->
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+<script src="data.js"></script>
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("slideval");
+    output.innerHTML = slider.value; // Display the default slider value
+    var ctx = document.getElementById('chartContainer').getContext('2d');
+    var myChart = null;
+
+
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+        val = makedataPoints(this.value);
+        makeChart(val[0], val[1])
+    }
+    window.onload = function() {
+        val = makedataPoints(0)
+        makeChart(val[0], val[1])
+    }
+
+    function makeChart(labelsa, points) {
+        if(myChart!=null){
+            myChart.destroy();
+        }
+        myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labelsa,
+                datasets: [{
+                    label: "Sentiment Score",
+                    data: points,
+                    backgroundColor: [
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)',
+                    'rgb(225,10,112)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {display: false},
+                scales: {
+                    yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Sentiment Score'
+                    }
+                    }]
+                    ,
+                    xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Marist Circle Editions'
+                    }
+                    }]
+                }     
+                }
+        });
+    }
+
+    function makedataPoints(subjectivityThreshold){
+        var points = [];
+        var labels = [];
+        for (var key in sentimentData) {
+            if (sentimentData.hasOwnProperty(key) && sentimentData[key][1] >= subjectivityThreshold) {
+                labels.push(key)
+                points.push(sentimentData[key][0])
+            }
+        }
+        return [labels, points]
+    }
+</script>
+
+
+</body>
+</html>
