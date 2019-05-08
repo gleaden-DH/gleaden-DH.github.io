@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
 <style>
 body, html {
   height: 100%;
@@ -21,6 +23,41 @@ body, html {
 .menu {
   display: none;
 }
+.grid-item { width: 200px; padding: 10px}
+.grid-item img {width: 100%;}
+
+.grid-item .ImgName {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 62, 206, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.grid-item:hover .ImgName{
+  visibility: visible;
+  opacity: 1;
+}
+
+.grid-item .ImgName {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.grid-item:hover .ImgName {
+  transform: translateY(0);
+}
+
 </style>
 <body>
 
@@ -69,12 +106,12 @@ body, html {
 <h6 class="w3-center"><span class="w3-tag w3-wide">UNDERSTANDING SENTIMENT ANALYSIS</span></h6> 
 <p>Sentiment analysis is the process of determining the attitude or the emotion of a piece of content, i.e., whether it is positive or negative or neutral. </p>
 <p>The graph below displays the sentiment score for each student newspaper over the course of its inaugural three years. Sentiment score is a value between [-1, 1] where 1 is most positive and -1 is most negative.</p>
-<p>The slider at the top of the graph denotes a threshold (minimum) subjectivity score. Subjectivity scores are provided with sentiment scores and are used to gauge how subjective (opinionated) or objective (factual) a peice of content is. Moving the slider to the right, increases the threshold and will limit the results on the graph to only show results that match that level of subjectivity.</p>
+<p>The slider at the top of the graph denotes a threshold (minimum) subjectivity score. Subjectivity scores are provided with sentiment scores and are used to gauge how subjective (opinionated) or objective (factual) a piece of content is. Moving the slider to the right, increases the threshold and will limit the results on the graph to only show those that match that level of subjectivity.</p>
 </div>
 
 <!-- GRAPH Container -->
 <div class="w3-container" id="menu">
-  <div class="w3-content" style="max-width:700px">
+  <div class="w3-content" style="max-width:800px">
  
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE DATA</span></h5>
 
@@ -85,6 +122,33 @@ body, html {
             </div></center>
         <canvas id="chartContainer" width="550" height="550"></canvas>
       </div>
+      <div class="grid">
+        <div class="grid-item"><img src="static/n1v1.png"/><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n1.htm>Vol. 1 Num. 1</a></div></div>
+        <div class="grid-item"><img src="static/v1n2.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n2.htm>Vol. 1 Num. 2</a></div></div>
+        <div class="grid-item"><img src="static/v1n3.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n3.htm>Vol. 1 Num. 3</a></div></div>
+        <div class="grid-item"><img src="static/v1n4.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n4.htm>Vol. 1 Num. 4</a></div></div>
+        <div class="grid-item"><img src="static/v1n5.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n5.htm>Vol. 1 Num. 5</a></div></div>
+        <div class="grid-item"><img src="static/v2n2.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n2.htm>Vol. 2 Num. 2</a></div></div>
+        <div class="grid-item"><img src="static/v2n3.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n3.htm>Vol. 2 Num. 3</a></div></div>
+        <div class="grid-item"><img src="static/v2n4.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n4.htm>Vol. 2 Num. 4</a></div></div>
+        <div class="grid-item"><img src="static/v2n5.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n5.htm>Vol. 2 Num. 5</a></div></div>
+        <div class="grid-item"><img src="static/v2n6.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n6.htm>Vol. 2 Num. 6</a></div></div>
+        <div class="grid-item"><img src="static/v2n8.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n8.htm>Vol. 2 Num. 8</a></div></div>
+        <div class="grid-item"><img src="static/v2n9.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v2n9.htm>Vol. 2 Num. 9</a></div></div>
+        <div class="grid-item"><img src="static/v3n1.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n1.htm>Vol. 3 Num. 1</a></div></div>
+        <div class="grid-item"><img src="static/v3n2.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n2.htm>Vol. 3 Num. 2</a></div></div>
+        <div class="grid-item"><img src="static/v3n3.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n3.htm>Vol. 3 Num. 3</a></div></div>
+        <div class="grid-item"><img src="static/v3n4.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n4.htm>Vol. 3 Num. 4</a></div></div>
+        <div class="grid-item"><img src="static/v3n5.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n5.htm>Vol. 3 Num. 5</a></div></div>
+        <div class="grid-item"><img src="static/v3n6.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n6.htm>Vol. 3 Num. 6</a></div></div>
+        <div class="grid-item"><img src="static/v3n9.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v3n9.htm>Vol. 3 Num. 9</a></div></div>
+        <div class="grid-item"><img src="static/v4n1.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v4n1.htm>Vol. 4 Num. 1</a></div></div>
+        <div class="grid-item"><img src="static/v4n2.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v4n2.htm>Vol. 4 Num. 2</a></div></div>
+        <div class="grid-item"><img src="static/v4n3.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v4n3.htm>Vol. 4 Num. 3</a></div></div>
+        <div class="grid-item"><img src="static/v4n4.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v4n4.htm>Vol. 4 Num. 4</a></div></div>
+        <div class="grid-item"><img src="static/v4n5.png"><div class="ImgName"><a href=http://library.marist.edu/archives/MHP_new/theCircle/v4n5.htm>Vol. 4 Num. 5</a></div></div>
+        
+      </div>
   </div>
 </div>
 
@@ -92,8 +156,8 @@ body, html {
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHAT CAN WE LEARN FROM THIS?</span></h5>
-    <p>Looking over the data presented in the graph, we can see that there is one newspaper that has a significantly lower sentiment score than the rest, <a href=http://library.marist.edu/archives/MHP_new/theCircle/pdfs/1967_10_19.pdf>Vol4 Num2: October 19, 1967</a>. Why is this?</p>
-    <p>The Oct 19, 1967 edition of the circle was uncharacteristically politcally charged. With articles discussing topics like: FDRs policies, the supreme court, the vietnam war, and addiction.</p>
+    <p>Looking over the data presented in the graph, we can see that there is one newspaper that has a significantly lower sentiment score than the rest, <a href=http://library.marist.edu/archives/MHP_new/theCircle/pdfs/1967_10_19.pdf>Vol. 4 Num. 2: October 19, 1967</a>. Why is this?</p>
+    <p>The Oct 19, 1967 edition of the circle was uncharacteristically politcally charged. With articles discussing topics like: FDR's policies, the supreme court, the vietnam war, and addiction.</p>
     <p>With these articles in mind, it is easy to see how this edition of the circle was the least positively charged edition in the circle's first three years.</p>
   </div>
 </div>
@@ -141,6 +205,12 @@ document.getElementById("myLink").click();
     window.onload = function() {
         val = makedataPoints(0)
         makeChart(val[0], val[1])
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 200
+        });
     }
 
     function makeChart(labelsa, points) {
@@ -217,6 +287,7 @@ document.getElementById("myLink").click();
         }
         return [labels, points]
     }
+
 </script>
 
 
