@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>origins of The Circle</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -34,7 +34,7 @@ body, html {
       <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
     </div>
     <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">GRAPH</a>
+      <a href="#menu" class="w3-button w3-block w3-black">DATA</a>
     </div>
     <div class="w3-col s3">
       <a href="#where" class="w3-button w3-block w3-black">WHAT</a>
@@ -64,16 +64,19 @@ body, html {
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE DH PROJECT</span></h5>
     <p>The <a href=http://library.marist.edu/archives/MHP_new/theCircle/v1n1.htm> first archived instance</a> of the <a href=https://www.maristcircle.com>Marist Circle</a> dates back to February 12, 1965.</p>
-    <p>This DH project seeks to recognize and denote sentiment patterns between weekly/monthly and yearly editions of the first 3 years of the archived Marist Circle.</p>
+    <p>There have been many changes over the newspaper’s 76 years. However, its mission has remained constant: the circle has been – and always will be – a newspaper for the students, by the students.</p>
+    <p>This DH project seeks to recognize and denote sentiment patterns between weekly/monthly and yearly editions of the first 3 years of the archived Marist Circle.</p><br>
 <h6 class="w3-center"><span class="w3-tag w3-wide">UNDERSTANDING SENTIMENT ANALYSIS</span></h6> 
-<p>lorem ipsum</p>
+<p>Sentiment analysis is the process of determining the attitude or the emotion of a piece of content, i.e., whether it is positive or negative or neutral. </p>
+<p>The graph below displays the sentiment score for each student newspaper over the course of its inaugural three years. Sentiment score is a value between [-1, 1] where 1 is most positive and -1 is most negative.</p>
+<p>The slider at the top of the graph denotes a threshold (minimum) subjectivity score. Subjectivity scores are provided with sentiment scores and are used to gauge how subjective (opinionated) or objective (factual) a peice of content is. Moving the slider to the right, increases the threshold and will limit the results on the graph to only show results that match that level of subjectivity.</p>
 </div>
 
 <!-- GRAPH Container -->
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE GRAPH</span></h5>
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE DATA</span></h5>
 
       <div id=chart>
             <center><div class="slidecontainer">
@@ -82,7 +85,6 @@ body, html {
             </div></center>
         <canvas id="chartContainer" width="550" height="550"></canvas>
       </div>
-    test
   </div>
 </div>
 
@@ -90,7 +92,9 @@ body, html {
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHAT CAN WE LEARN FROM THIS?</span></h5>
-    <p>vietnam war, 1967 FDR, lorem ipsum.</p>
+    <p>Looking over the data presented in the graph, we can see that there is one newspaper that has a significantly lower sentiment score than the rest, <a href=http://library.marist.edu/archives/MHP_new/theCircle/pdfs/1967_10_19.pdf>Vol4 Num2: October 19, 1967</a>. Why is this?</p>
+    <p>The Oct 19, 1967 edition of the circle was uncharacteristically politcally charged. With articles discussing topics like: FDRs policies, the supreme court, the vietnam war, and addiction.</p>
+    <p>With these articles in mind, it is easy to see how this edition of the circle was the least positively charged edition in the circle's first three years.</p>
   </div>
 </div>
 
@@ -99,7 +103,7 @@ body, html {
 
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>, ChartJS, Python, TextBlob, and GitHub Pages</p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>, <a href="https://www.chartjs.org/" title="ChartJS" target="_blank" class="w3-hover-text-green">ChartJS</a>, <a href="https://www.python.org/" title="Python" target="_blank" class="w3-hover-text-green">Python</a>, <a href="https://textblob.readthedocs.io/en/dev/" title="TextBlob" target="_blank" class="w3-hover-text-green">TextBlob</a>, and <a href="https://pages.github.com/" title="GitHub Pages" target="_blank" class="w3-hover-text-green">GitHub Pages</a></p>
 </footer>
 
 <!-- <script>
